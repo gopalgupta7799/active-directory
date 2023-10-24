@@ -1,24 +1,31 @@
 package com.mygroup.activedirectory.services;
 
 import com.mygroup.activedirectory.dao.GroupDao;
+import com.mygroup.activedirectory.dao.UserDao;
 import com.mygroup.activedirectory.entities.Group;
 import com.mygroup.activedirectory.entities.User;
-import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
-import java.util.Set;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 @Service
 public class GroupServiceImpl implements GroupService {
 
-  @Autowired
-  GroupDao groupDao;
+  final GroupDao groupDao;
+
+  final UserDao userDao;
+
+  public GroupServiceImpl(GroupDao groupDao, UserDao userDao) {
+    this.groupDao = groupDao;
+    this.userDao = userDao;
+  }
 
   @Override
-  public List<Group> getGroups() {
-    return groupDao.findAll();
+  public Page<Group> getGroups(int pageNumber) {
+    return groupDao.findAll(PageRequest.of(pageNumber, 10, Sort.by("name")));
   }
 
   @Override
@@ -50,9 +57,10 @@ public class GroupServiceImpl implements GroupService {
   }
 
   @Override
-  public Set<User> getGroupUsers(String groupId) {
+  public Page<User> getGroupUsers(String groupId, int pageNumber) {
     Optional<Group> optionalGroup = groupDao.findById(groupId);
-    if (optionalGroup.isPresent()) return optionalGroup.get().getUsers();
+    if (optionalGroup.isPresent()) return userDao.findByGroupsId(groupId,
+        PageRequest.of(pageNumber, 10, Sort.by("name")));
     else throw new NoSuchElementException("No group found with Id: " + groupId);
   }
 

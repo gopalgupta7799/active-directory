@@ -2,12 +2,11 @@ package com.mygroup.activedirectory.services;
 
 import com.mygroup.activedirectory.entities.Group;
 import com.mygroup.activedirectory.entities.User;
-import java.util.List;
-import java.util.Set;
+import org.springframework.data.domain.Page;
 
 public interface UserService {
 
-  List<User> getUsers();
+  Page<User> getUsers(int pageNumber);
 
   User getUser(String userId);
 
@@ -19,7 +18,7 @@ public interface UserService {
 
   void addUserToGroup(String userId, String groupId);
 
-  Set<Group> getUserGroups(String userId);
+  Page<Group> getUserGroups(String userId, int pageNumber);
 
   void removeUserFromGroup(String userId, String groupId);
 
