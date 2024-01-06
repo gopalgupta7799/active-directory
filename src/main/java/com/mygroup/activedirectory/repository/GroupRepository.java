@@ -1,4 +1,4 @@
-package com.mygroup.activedirectory.dao;
+package com.mygroup.activedirectory.repository;
 
 import com.mygroup.activedirectory.entities.Group;
 import jakarta.transaction.Transactional;
@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-public interface GroupDao extends JpaRepository<Group, String> {
+public interface GroupRepository extends JpaRepository<Group, String> {
 
   @Transactional
   @Modifying
