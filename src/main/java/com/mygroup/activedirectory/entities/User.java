@@ -12,10 +12,11 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
-import java.util.HashSet;
-import java.util.Set;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -27,9 +28,10 @@ public class User {
   @GeneratedValue(strategy = GenerationType.UUID)
   String id;
 
+  @Column(nullable = false)
   String name;
 
-  @Column(unique = true)
+  @Column(unique = true, nullable = false)
   String email;
 
   @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.DETACH,
