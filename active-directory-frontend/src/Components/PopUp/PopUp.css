@@ -1,0 +1,72 @@
+#pop-up-background {
+  height: 100vh;
+  width: 100vw;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--pop-up-background);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.show-pop-up {
+  display: flex;
+}
+
+.hide-pop-up {
+  display: none;
+}
+
+#popUpBoard {
+  height: 50%;
+  background-color: white;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 0 20px var(--theme-color), 0 0 10px var(--theme-color);
+  min-height: 200px;
+  min-width: 100px;
+}
+
+.cancel-sign {
+  align-self: flex-end;
+  font-family: "Andale Mono", fangsong;
+  color: white;
+  font-size: xx-large;
+  cursor: pointer;
+  transform: translate(110%, -110%);
+}
+
+.popUpForm {
+  display: flex;
+  flex-direction: column;
+  min-width: fit-content;
+  min-height: fit-content;
+  align-items: center;
+}
+
+.popUpForm > div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.popUpForm > div > div {
+  display: flex;
+  margin: 10px;
+}
+
+.popUpForm > input {
+  border-radius: 5px;
+  background-color: var(--theme-color);
+  border: none;
+  width: fit-content;
+  padding: 5px;
+}
+
+.popUpForm > input:hover {
+  box-shadow: 0 0 20px var(--theme-color), 0 0 10px var(--theme-color);
+}

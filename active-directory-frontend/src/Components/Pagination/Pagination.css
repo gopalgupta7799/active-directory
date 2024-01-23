@@ -1,0 +1,17 @@
+.pagination {
+  margin-top: 50px;
+  padding: 10px;
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pageNumber {
+  padding: 7px;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.pageNumber:hover {
+  border: 2px solid var(--theme-color);
+}

@@ -1,0 +1,46 @@
+#header {
+  height: 50px;
+  box-shadow: 0 0 15px var(--shadow);
+  display: flex;
+  align-items: center;
+}
+
+#header > * {
+  display: flex;
+  align-items: center;
+  width: calc(100vw / 3);
+}
+
+.center {
+  justify-content: center;
+}
+
+.hamburger {
+  margin: 0 20px;
+}
+
+.hamburger > svg {
+  transform: scale(1.5);
+}
+
+.hamburger > svg:hover {
+  border-radius: 50%;
+  background-color: var(--theme-color);
+  box-shadow: 0 0 5px 5px var(--theme-color);
+}
+
+#brand {
+  font-size: 20px;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+  border-radius: 50px;
+  height: 30px;
+  padding: 5px;
+}
+
+#brand:hover {
+  background-color: var(--theme-color);
+  box-shadow: 0 0 5px 5px var(--theme-color);
+}

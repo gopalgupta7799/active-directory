@@ -1,0 +1,23 @@
+#home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  color: black;
+  height: 100px;
+  width: 100px;
+  margin: 50px;
+  background-color: var(--theme-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 10px var(--shadow);
+  transition: 0.20s linear;
+}
+
+.card:hover {
+  scale: 110%;
+  box-shadow: 0 20px 50px var(--shadow);
+}

@@ -1,0 +1,31 @@
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+
+td {
+  height: fit-content;
+  padding: 10px;
+}
+
+thead > tr {
+  background-color: var(--row-color);
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: var(--row-color);
+}
+
+tr > *:nth-child(1) {
+  width: 40%;
+}
+
+tr > *:nth-child(2) {
+  width: 25%;
+}
+
+tr > *:nth-child(3) {
+  width: 35%;
+}

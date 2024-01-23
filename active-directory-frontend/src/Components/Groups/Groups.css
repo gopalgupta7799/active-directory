@@ -1,0 +1,9 @@
+#groups{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+  height: inherit;
+  width: inherit;
+  padding: 0 30px;
+}

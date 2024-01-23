@@ -1,0 +1,24 @@
+:root {
+  --shadow: #c3c4c5;
+  --theme-color: #B9F0FCFF;
+  --link-color: #0078d4;
+  --row-color: #f2f3f5;
+  --pop-up-background: rgba(0, 0, 0, 0.66);
+}
+
+* {
+  font-family: "Courier", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--link-color);
+}
